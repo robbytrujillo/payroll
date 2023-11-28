@@ -37,8 +37,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- <h6 class="collapse-header">Custom Components:</h6> -->
-                        <a class="collapse-item" href="<?php echo base_url('admin/employess') ?>">Employees</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/position') ?>">Position</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/dataEmployess') ?>">Employees</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/dataPosition') ?>">Position</a>
                     </div>
                 </div>
             </li>
@@ -70,9 +70,9 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- <h6 class="collapse-header">Login Screens:</h6> -->
-                        <a class="collapse-item" href="<?php echo base_url('admin/salary_report')?>">Salary Report</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/attandance_report') ?>">Attandance Report</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/salary_slip') ?>">Salary Slip</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/salaryReport')?>">Salary Report</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/attandanceReport') ?>">Attandance Report</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/salarySlip') ?>">Salary Slip</a>
                     </div>
                 </div>
             </li>
