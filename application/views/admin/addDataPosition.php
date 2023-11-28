@@ -33,7 +33,7 @@
                     <?php echo form_error('meal_allowance','<div class="text-small text-danger"></div>') ?>
                 </div>
 
-                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="submit" class="btn btn-success" style="margin-bottom: 70px">Submit</button>
 
                 </form>
         </div>
