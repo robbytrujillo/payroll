@@ -11,7 +11,7 @@ class DataPosition extends CI_Controller{
         $this->load->view('templates_admin/footer');
     }
 
-    public function add_data() {
+    public function addData() {
         $dataPosition['title'] = "Add Data Position";
         $this->load->view('templates_admin/header', $dataPosition);
         $this->load->view('templates_admin/sidebar');
@@ -19,11 +19,11 @@ class DataPosition extends CI_Controller{
         $this->load->view('templates_admin/footer');
     }
 
-    public function add_data_action() {
+    public function addDataAction() {
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->add_data();
+            $this->addData();
         } else {
             $name_position = $this->input->post('name_position');
             $basic_salary = $this->input->post('basic_salary');
@@ -49,7 +49,10 @@ class DataPosition extends CI_Controller{
     }
 
     public function _rules() {
-        $this->form_validation->set_rules('name_position', 'Name position', 'required|trim', [
+        $this->form_validation->set_rules('name_position', 'name_position', 'required');
+        $this->form_validation->set_rules('basic_salary', 'basic_salary', 'required');
+        $this->form_validation->set_rules('transport_allowance', 'transport_allowance', 'required');
+        $this->form_validation->set_rules('meal_allowance', 'meal_allowance', 'required');
     }
 }
 

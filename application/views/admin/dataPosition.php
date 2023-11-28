@@ -4,7 +4,7 @@
         <h1 class="h3 mb-0 text-gray-800"><?php echo $title ?></h1>
     </div>
 
-    <a class="btn btn-sm btn-success mb-3" href="<?php echo base_url('admin/dataPosition/add_data') ?>"><i class="fas fa-plus"></i>Add Data</a> 
+    <a class="btn btn-sm btn-success mb-3" href="<?php echo base_url('admin/dataPosition/addData') ?>"><i class="fas fa-plus"></i>Add Data</a> 
 
     <table class="table table-bordered table-striped">
         <tr>
@@ -27,8 +27,8 @@
             <td>Rp. <?php echo number_format($p->basic_salary + $p->transport_allowance + $p->meal_allowance,0,',','.') ?></td>
             <td>
                 <center>
-                    <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/dataPosition/update_data/$j->id_position') ?>"><i class="fas fa-edit"></i></a> 
-                    <a onclick="return confirm('Yakin akan dihapus?')" class="btn btn-sm btn-danger" href="<?php echo base_url('admin/dataPosition/delete_data/$j->id_position') ?>"><i class="fas fa-trash"></i></a> 
+                    <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/dataPosition/updateData/$j->id_position') ?>"><i class="fas fa-edit"></i></a> 
+                    <a onclick="return confirm('Yakin akan dihapus?')" class="btn btn-sm btn-danger" href="<?php echo base_url('admin/dataPosition/deleteData/$j->id_position') ?>"><i class="fas fa-trash"></i></a> 
                 </center>
             </td>
         </tr>
