@@ -29,8 +29,8 @@
             <td>Rp. <?php echo number_format($p->basic_salary + $p->transport_allowance + $p->meal_allowance,0,',','.') ?></td>
             <td>
                 <center>
-                    <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/dataPosition/updateData/$j->id_position') ?>"><i class="fas fa-edit"></i></a> 
-                    <a onclick="return confirm('Yakin akan dihapus?')" class="btn btn-sm btn-danger" href="<?php echo base_url('admin/dataPosition/deleteData/$j->id_position') ?>"><i class="fas fa-trash"></i></a> 
+                    <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/dataPosition/updateData/'.$p->id_position) ?>"><i class="fas fa-edit"></i></a> 
+                    <a onclick="return confirm('Yakin akan dihapus?')" class="btn btn-sm btn-danger" href="<?php echo base_url('admin/dataPosition/deleteData/'.$p->id_position) ?>"><i class="fas fa-trash"></i></a> 
                 </center>
             </td>
         </tr>

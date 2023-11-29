@@ -37,7 +37,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- <h6 class="collapse-header">Custom Components:</h6> -->
-                        <a class="collapse-item" href="<?php echo base_url('admin/dataEmployess') ?>">Employees</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/dataEmployee') ?>">Employees</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataPosition') ?>">Position</a>
                     </div>
                 </div>
