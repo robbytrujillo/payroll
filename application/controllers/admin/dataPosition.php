@@ -37,22 +37,22 @@ class DataPosition extends CI_Controller{
                 'meal_allowance' => $meal_allowance,
             ); 
 
-            $this->payrollModel->insert_data($data, 'data_position');
+            $this->payrollModel->insert_data($data, 'position');
             $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Add Data Success!</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-          redirect('dataPosition');
+          redirect('admin/dataPosition');
         }
     }
 
     public function _rules() {
-        $this->form_validation->set_rules('name_position', 'name_position', 'required');
-        $this->form_validation->set_rules('basic_salary', 'basic_salary', 'required');
-        $this->form_validation->set_rules('transport_allowance', 'transport_allowance', 'required');
-        $this->form_validation->set_rules('meal_allowance', 'meal_allowance', 'required');
+        $this->form_validation->set_rules('name_position', 'name position', 'required');
+        $this->form_validation->set_rules('basic_salary', 'basic salary', 'required');
+        $this->form_validation->set_rules('transport_allowance', 'transport allowance', 'required');
+        $this->form_validation->set_rules('meal_allowance', 'meal allowance', 'required');
     }
 }
 

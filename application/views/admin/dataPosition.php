@@ -5,8 +5,10 @@
     </div>
 
     <a class="btn btn-sm btn-success mb-3" href="<?php echo base_url('admin/dataPosition/addData') ?>"><i class="fas fa-plus"></i>Add Data</a> 
-
-    <table class="table table-bordered table-striped">
+    <?php  
+    echo $this->session->flashdata('message')
+    ?>
+    <table class="table table-bordered table-striped mt-2">
         <tr>
             <th class="text-center">No</th>
             <th class="text-center">Name Position</th>

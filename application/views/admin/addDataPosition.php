@@ -4,7 +4,7 @@
         <h1 class="h3 mb-0 text-gray-800"><?php echo $title ?></h1>
     </div>
 
-        <div class="card" style="width: 60%">
+        <div class="card" style="width: 60%; margin-bottom: 100px">
             <div class="card-body">
 
                 <form method="POST" action="<?php echo base_url('admin/dataPosition/addDataAction') ?>">
@@ -33,7 +33,7 @@
                     <?php echo form_error('meal_allowance','<div class="text-small text-danger"></div>') ?>
                 </div>
 
-                <button type="submit" class="btn btn-success" style="margin-bottom: 70px">Submit</button>
+                <button type="submit" class="btn btn-success">Submit</button>
 
                 </form>
         </div>
