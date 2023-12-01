@@ -71,8 +71,15 @@ class DataEmployee extends CI_Controller{
 }
 
 public function updateData($id) {
-    $where = array('id_employee' => $id);
-    $dataEmployee['title'] = 'Update';
+        $where = array('id_employee' => $id);
+        $dataEmployee['title'] = 'Update Data Employee';
+        $dataEmployee['position'] = $this->payrollModel->get_data('position')->result();
+        $dataEmployee['employee'] = $this->db->where->query("SELECT * FROM employees WHERE id_employee = '$id'")
+        ->result();
+        $this->load->view('templates_admin/header', $dataEmployee);
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('admin/updateDataEmployee', $dataEmployee);
+        $this->load->view('templates_admin/footer');
 }
 
 public function _rules() {
