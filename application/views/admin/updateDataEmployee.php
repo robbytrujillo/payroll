@@ -8,7 +8,7 @@
         <div class="card-body">
             <?php foreach($employee as $e) :?>
         
-            <form method="POST" action="<?php echo base_url('admin/dataEmployee/addDataAction') ?>" enctype="multipart/form-data">
+            <form method="POST" action="<?php echo base_url('admin/dataEmployee/updateDataAction') ?>" enctype="multipart/form-data">
             <div class="form-group">
                 <label>NIK</label>
                 <input type="hidden" name="id_employee" class="form-control" value="<?php echo $e->id_employee ?>">
