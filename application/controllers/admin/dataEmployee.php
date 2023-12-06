@@ -98,14 +98,14 @@ public function updateDataAction() {
         $photo = $_FILES ['photo'].['name'] ;
 
         if ($photo){
-        }else{
             $config ['upload_path'] = './assets/photo';
             $config ['allowed_types'] = 'jpg|jpeg|png|tiff';
             $this->load->library ('upload',$config);
             if (!$this->upload->do_upload('photo')){
-                echo "Upload Photo Failed!";
-            } else {
                 $photo = $this->upload->data('file_name');
+                $this->db->set('photo', $photo);
+            } else {
+                echo $this->upload->display_errors();
             }
         }
 
@@ -116,12 +116,15 @@ public function updateDataAction() {
         'position'       => $position,
         'date_join'      => $date_join,
         'status'         => $status,
-        'photo'          => $photo,
         );
 
-        $this->payrollModel->insert_data($data, 'employees');
+        $where = array(
+            'id_employee' => $id,
+        );
+
+        $this->payrollModel->update_data('employees', $data, $where);
         $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Add Data Success!</strong>
+            <strong>Update Data Success!</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
         </button>
@@ -137,6 +140,18 @@ public function _rules() {
     $this->form_validation->set_rules('date_join', 'Date Join', 'required');
     $this->form_validation->set_rules('position', 'Position', 'required');
     $this->form_validation->set_rules('status', 'Status', 'required');
+}
+
+public function deleteData($id) {
+    $where = array ('id_employee' => $id);
+    $this->payrollModel->delete_data($where, 'employees');
+    $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Delete Data Success!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+        </button>
+      </div>');
+      redirect('admin/dataEmployee');
 }
 }
 ?>
