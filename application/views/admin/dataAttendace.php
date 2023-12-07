@@ -40,7 +40,9 @@
         <?php } ?>
         </select>
         </div>
-    <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+
+    <button type="submit" class="btn btn-primary mb-2"><i class="fas fa-eye"></i> Show Data</button>
+    <a href="" class="btn btn-success mb-2"><i class="fas fa-plus"></i> Attendance Input</a>
     </form>
     </div>
 </div>
