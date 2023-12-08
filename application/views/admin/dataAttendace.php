@@ -42,7 +42,7 @@
         </div>
 
     <button type="submit" class="btn btn-primary mb-2 ml-auto"><i class="fas fa-eye"></i> Show Data</button>
-    <a href="" class="btn btn-success mb-2"><i class="fas fa-plus"></i> Attendance Input</a>
+    <a href="" class="btn btn-success mb-2 ml-3"><i class="fas fa-plus"></i> Attendance Input</a>
     </form>
     </div>
 </div>
