@@ -12,7 +12,7 @@
     <form class="form-inline">
         <div class="form-group mb-2">
         <label for="staticEmail2">Month: </label>
-        <select class="form-control" name="month">
+        <select class="form-control ml-2" name="month">
             <option value="">--Choose Month--</option>
             <option value="01">January</option>
             <option value="02">February</option>
@@ -29,9 +29,9 @@
         </select>
         </div>
         
-        <div class="form-group mb-2">
+        <div class="form-group mb-2 ml-5">
         <label for="staticEmail2">Year: </label>
-        <select class="form-control" name="year">
+        <select class="form-control ml-2" name="year">
             <option value="">--Choose Year--</option>
             <?php $year = date('Y');
             for ($i=2020;$i<$year+5;$i++) {
@@ -46,7 +46,9 @@
     </form>
     </div>
 </div>
-
+<div class="alert alert-info">
+Displays Employee Attendance Data For The Month:   Year:          
+</div>
         
 </div>
              
