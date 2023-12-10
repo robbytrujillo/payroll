@@ -63,6 +63,33 @@
 <div class="alert alert-info">
 Displays Employee Attendance Data For The Month: <span class="font-weight-bold"><?php echo $month ?></span> Year: <span class="font-weight-bold"><?php echo $year ?>         
 </div>
-        
+
+<table class="table table-bordered table-stripes">
+    <tr>
+        <td class="text-center">No</td>
+        <td class="text-center">NIK</td>
+        <td class="text-center">Name Employee</td>
+        <td class="text-center">Gender</td>
+        <td class="text-center">Position</td>
+        <td class="text-center">Attendace</td>
+        <td class="text-center">Sick</td>
+        <td class="text-center">Alpha</td>
+    </tr>
+
+    <?php $no=1; foreach($attendaces as $a) : ?>
+        <tr>
+            <td><?php echo $no++ ?></td>
+            <td><?php echo $a->nik ?></td>
+            <td><?php echo $a->name_employee ?></td>
+            <td><?php echo $a->gender ?></td>
+            <td><?php echo $a->position ?></td>
+            <td><?php echo $a->total_attendance ?></td>
+            <td><?php echo $a->sick ?></td>
+            <td><?php echo $a->alpha ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+
+
 </div>
              
