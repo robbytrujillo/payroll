@@ -61,7 +61,7 @@
 ?>
 
 <div class="alert alert-info">
-Displays Employee Attendance Data For The Month:   Year:          
+Displays Employee Attendance Data For The Month: <span class="font-weight-bold"><?php echo $month ?></span> Year: <span class="font-weight-bold"><?php echo $year ?>         
 </div>
         
 </div>
