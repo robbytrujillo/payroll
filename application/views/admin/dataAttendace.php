@@ -46,6 +46,20 @@
     </form>
     </div>
 </div>
+
+<?php 
+    if ((isset($_GET['month']) && $_GET['month']!='') && (isset($_GET['year']) && $_GET['year']!='')) {
+        $month = $_GET['month'];
+        $year = $_GET['year'];
+        $monthyear = $month.$year;
+    } else {
+        $month = date('m');
+        $year = date('Y');
+        $monthyear = $month.$year;
+    }
+
+?>
+
 <div class="alert alert-info">
 Displays Employee Attendance Data For The Month:   Year:          
 </div>
