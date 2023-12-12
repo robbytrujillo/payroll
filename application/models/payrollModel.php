@@ -19,6 +19,13 @@ class PayrollModel extends CI_Model {
         $this->db->delete($table);
     }
 
+    public function insert_batch($table = null, $data = array()) {
+        $sum = count($data);
+        if ($sum > 0) {
+            $this->db->insert_batch($table, $data);
+        }
+    }
+
 
 }
 

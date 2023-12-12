@@ -65,7 +65,7 @@
 Displays Employee Attendance Data For The Month: <span class="font-weight-bold"><?php echo $month ?></span> Year: <span class="font-weight-bold"><?php echo $year ?>         
 </div>
 <form method="POST">
-<button class="btn btn-success mb-3" type="submit" name="submit">Save</button>
+<button class="btn btn-success mb-3" type="submit" name="submit" value="submit">Save</button>
 
 <table class="table table-bordered table-stripes">
     <tr>
@@ -81,6 +81,12 @@ Displays Employee Attendance Data For The Month: <span class="font-weight-bold">
 
     <?php $no=1; foreach($attendaces_input as $a) : ?>
         <tr>
+            <input type="hidden" name="month[]" class="form-control" value="<?php echo $monthyear ?>">
+            <input type="hidden" name="nik[]" class="form-control" value="<?php echo $a->nik ?>">
+            <input type="hidden" name="name_employee[]" class="form-control" value="<?php echo $a->name_employee ?>">
+            <input type="hidden" name="gender[]" class="form-control" value="<?php echo $a->gender ?>">
+            <input type="hidden" name="name_position[]" class="form-control" value="<?php echo $a->name_position ?>">
+
             <td><?php echo $no++ ?></td>
             <td><?php echo $a->nik ?></td>
             <td><?php echo $a->name_employee ?></td>

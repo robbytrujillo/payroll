@@ -35,7 +35,34 @@ class DataAttendace extends CI_Controller{
     }
 
     public function attendanceInput() {
-        if ($this->input->post('submit', TRUE) == 'SUBMIT');
+        if ($this->input->post('submit', TRUE) == 'submit') {
+            $post = $this->input->post();
+
+            foreach ($post['month'] as $key => $value) {
+                if ($post['month'][$key] !='' || $post['nik'][$key] !='')
+                {
+                    $save[] = array(
+                        'month'          => $post['month'][$key],
+                        'nik'            => $post['nik'][$key],
+                        'name_employee'     => $post['name_employee'][$key],
+                        'gender'        => $post['gender'][$key],
+                        'name_position' => $post['name_position'][$key],
+                        'total_attendance' => $post['total_attendance'][$key],
+                        'sick' => $post['sick'][$key],
+                        'alpha' => $post['alpha'][$key],
+                    );
+                }
+            }
+
+            $this->payrollModel->insert_batch('attendaces', $save);
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Add Data Success!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+            </button>
+          </div>');
+          redirect('admin/dataAttendace');
+        }
 
         $dataAttendace['title'] = "Form Attendance Input";
         if ((isset($_GET['month']) && $_GET['month']!='') && (isset($_GET['year']) && $_GET['year']!='')) {
