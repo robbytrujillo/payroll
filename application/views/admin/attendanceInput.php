@@ -6,14 +6,14 @@
 
     <div class="card mb-3">
         <div class="card-header bg-primary text-white">
-        Filter Data Attendace
+        Attendace Data Input
         </div>
     <div class="card-body">
     <form class="form-inline">
         <div class="form-group mb-2">
-        <label for="staticEmail2">month: </label>
+        <label for="staticEmail2">Month: </label>
         <select class="form-control ml-2" name="month">
-            <option value="">--Choose month--</option>
+            <option value="">--Choose Month--</option>
             <option value="01">January</option>
             <option value="02">February</option>
             <option value="03">March</option>
@@ -41,8 +41,8 @@
         </select>
         </div>
 
-    <button type="submit" class="btn btn-primary mb-2 ml-auto"><i class="fas fa-eye"></i> Show Data</button>
-    <a href="<?php echo base_url('admin/dataAttendace/attendanceInput') ?>" class="btn btn-success mb-2 ml-3"><i class="fas fa-plus"></i> Attendance Input</a>
+    <button type="submit" class="btn btn-primary mb-2 ml-auto"><i class="fas fa-eye"></i> Generate</button>
+    
     </form>
     </div>
 </div>
@@ -60,16 +60,12 @@
 
 ?>
 
+
 <div class="alert alert-info">
-Displays Employee Attendance Data For The month: <span class="font-weight-bold"><?php echo $month ?></span> Year: <span class="font-weight-bold"><?php echo $year ?>         
+Displays Employee Attendance Data For The Month: <span class="font-weight-bold"><?php echo $month ?></span> Year: <span class="font-weight-bold"><?php echo $year ?>         
 </div>
-
-<?php
-
-$sum_data = count($attendaces);
-if ($sum_data > 0) {
-
-?>
+<form method="POST">
+<button class="btn btn-success mb-3" type="submit" name="submit">Save</button>
 
 <table class="table table-bordered table-stripes">
     <tr>
@@ -78,27 +74,25 @@ if ($sum_data > 0) {
         <td class="text-center">Name Employee</td>
         <td class="text-center">Gender</td>
         <td class="text-center">Position</td>
-        <td class="text-center">Attendace</td>
-        <td class="text-center">Sick</td>
-        <td class="text-center">Alpha</td>
+        <td class="text-center" width="8%">Attendace</td>
+        <td class="text-center" width="8%">Sick</td>
+        <td class="text-center" width="8%">Alpha</td>
     </tr>
 
-    <?php $no=1; foreach($attendaces as $a) : ?>
+    <?php $no=1; foreach($attendaces_input as $a) : ?>
         <tr>
             <td><?php echo $no++ ?></td>
             <td><?php echo $a->nik ?></td>
             <td><?php echo $a->name_employee ?></td>
             <td><?php echo $a->gender ?></td>
             <td><?php echo $a->position ?></td>
-            <td><?php echo $a->total_attendance ?></td>
-            <td><?php echo $a->sick ?></td>
-            <td><?php echo $a->alpha ?></td>
+            <td><input type="number" name="total_attendance[]" class="form-control" value="0"></td>
+            <td><input type="number" name="sick[]" class="form-control" value="0"></td>
+            <td><input type="number" name="alpha[]" class="form-control" value="0"></td>
         </tr>
     <?php endforeach; ?>
-</table>
+</table><br><br><br><br>
+    </form>
 
-<?php } else { ?>
-    <span class="badge badge-danger"><i class="fas fa-info-circle">The data is still empty, please input attendance data for the month and year you choose!!</i></span>
-<?php } ?>
 </div>
              

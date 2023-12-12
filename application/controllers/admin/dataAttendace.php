@@ -33,5 +33,27 @@ class DataAttendace extends CI_Controller{
         $this->load->view('admin/dataAttendace', $dataAttendace);
         $this->load->view('templates_admin/footer');
     }
+
+    public function attendanceInput() {
+        if ($this->input->post('submit', TRUE) == 'SUBMIT');
+
+        $dataAttendace['title'] = "Form Attendance Input";
+        if ((isset($_GET['month']) && $_GET['month']!='') && (isset($_GET['year']) && $_GET['year']!='')) {
+            $month = $_GET['month'];
+            $year = $_GET['year'];
+            $monthyear = $month.$year;
+        } else {
+            $month = date('m');
+            $year = date('Y');
+            $monthyear = $month.$year;
+        }
+        $dataAttendace['attendaces_input'] = $this->db->query("SELECT employees.*, position.name_position FROM employees 
+                    INNER JOIN position ON employees.position = position.name_position WHERE NOT EXISTS (SELECT * FROM attendaces WHERE month='$monthyear' AND employees.nik=attendaces.nik) 
+                    ORDER BY employees.name_employee ASC")->result();
+        $this->load->view('templates_admin/header', $dataAttendace);
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('admin/attendanceInput', $dataAttendace);
+        $this->load->view('templates_admin/footer');
+    }
 }
 ?>
