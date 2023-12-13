@@ -14,7 +14,6 @@ class SalaryCuts extends CI_Controller {
     
     public function addData() {
         $dataSalaryCuts['title'] = "Add Salary Cuts";
-
             $this->load->view('templates_admin/header', $dataSalaryCuts);
             $this->load->view('templates_admin/sidebar');
             $this->load->view('admin/addSalaryCuts', $dataSalaryCuts);
@@ -95,7 +94,7 @@ class SalaryCuts extends CI_Controller {
         $this->form_validation->set_rules('number_of_pieces', 'number of pieces', 'required');
     }
 
-    public function deleteDatata($id) {
+    public function deleteData($id) {
         $where = array ('id' => $id);
         $this->payrollModel->delete_data($where, 'salary_cuts');
         $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
