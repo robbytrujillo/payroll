@@ -55,6 +55,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- <h6 class="collapse-header">Custom Utilities:</h6> -->
                         <a class="collapse-item" href="<?php echo base_url('admin/dataAttendace') ?>">Attendance</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/salaryCuts') ?>">Salary Cuts Setting</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataSalary') ?>">Salary</a>
                     </div>
                 </div>
