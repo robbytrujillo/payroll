@@ -44,11 +44,7 @@ class SalaryCuts extends CI_Controller {
           redirect('admin/salaryCuts');
         }
     }
-    public function _rules() {
-        $this->form_validation->set_rules('piece', 'pieces', 'required');
-        $this->form_validation->set_rules('number_of_pieces', 'number of pieces', 'required');
-    }
-
+    
     public function updateData($id) {
         $where = array ('id'=>$id);
         $dataSalaryCuts['title'] = "Update Salary Cuts";
@@ -90,7 +86,7 @@ class SalaryCuts extends CI_Controller {
     }
 
     public function _rules() {
-        $this->form_validation->set_rules('piece', 'piece', 'required');
+        $this->form_validation->set_rules('piece', 'pieces', 'required');
         $this->form_validation->set_rules('number_of_pieces', 'number of pieces', 'required');
     }
 

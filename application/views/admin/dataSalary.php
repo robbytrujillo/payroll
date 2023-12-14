@@ -6,7 +6,7 @@
 
     <div class="card mb-3">
         <div class="card-header bg-primary text-white">
-        Filter Data Attendace
+        Filter Data Employee Salary
         </div>
     <div class="card-body">
     <form class="form-inline">
@@ -42,7 +42,7 @@
         </div>
 
     <button type="submit" class="btn btn-primary mb-2 ml-auto"><i class="fas fa-eye"></i> Show Data</button>
-    <a href="<?php echo base_url('admin/dataAttendace/attendanceInput') ?>" class="btn btn-success mb-2 ml-3"><i class="fas fa-plus"></i> Attendance Input</a>
+    <a href="" class="btn btn-success mb-2 ml-3"><i class="fas fa-print"></i> Print Payroll</a>
     </form>
     </div>
 </div>
@@ -61,44 +61,59 @@
 ?>
 
 <div class="alert alert-info">
-Displays Employee Attendance Data For The month: <span class="font-weight-bold"><?php echo $month ?></span> Year: <span class="font-weight-bold"><?php echo $year ?>         
+Displays Employee Salary Data For The month: <span class="font-weight-bold"><?php echo $month ?></span> Year: <span class="font-weight-bold"><?php echo $year ?>         
 </div>
 
 <?php
 
-$sum_data = count($attendaces);
+$sum_data = count($salary);
 if ($sum_data > 0) {
 
 ?>
 
-<table class="table table-bordered table-stripes">
-    <tr>
-        <td class="text-center">No</td>
-        <td class="text-center">NIK</td>
-        <td class="text-center">Name Employee</td>
-        <td class="text-center">Gender</td>
-        <td class="text-center">Position</td>
-        <td class="text-center">Attendace</td>
-        <td class="text-center">Sick</td>
-        <td class="text-center">Alpha</td>
-    </tr>
+<div class="table-responsive">
+    <table class="table table bordered table-striped">
+        <tr>
+            <th class="text-center">No</th>
+            <th class="text-center">NIK</th>
+            <th class="text-center">Name Employee</th>
+            <th class="text-center">Gender</th>
+            <th class="text-center">Position</th>
+            <th class="text-center">Basic Salary</th>
+            <th class="text-center">Transport Allowance</th>
+            <th class="text-center">Meal Allowance</th>
+            <th class="text-center">Salary Cuts</th>
+            <th class="text-center">Total Salary</th>
+        </tr>
 
-    <?php $no=1; foreach($attendaces as $a) : ?>
+        <?php foreach ($piece as $p) {
+            $alpha = $p->number_of_pieces;  
+        }
+        ?>
+
+        <?php $no=1; foreach($salary as $s) : ?>
+
+        <?php $piece = $s->alpha * $alpha ?>
         <tr>
             <td><?php echo $no++ ?></td>
-            <td><?php echo $a->nik ?></td>
-            <td><?php echo $a->name_employee ?></td>
-            <td><?php echo $a->gender ?></td>
-            <td><?php echo $a->position ?></td>
-            <td><?php echo $a->total_attendance ?></td>
-            <td><?php echo $a->sick ?></td>
-            <td><?php echo $a->alpha ?></td>
+            <td><?php echo $s->nik ?></td>
+            <td><?php echo $s->name_employee ?></td>
+            <td><?php echo $s->gender ?></td>
+            <td><?php echo $s->name_position ?></td>
+            <td>Rp.<?php echo number_format($s->basic_salary,0, ',','.') ?></td>
+            <td>Rp.<?php echo number_format($s->transport_allowance,0, ',', '.') ?></td>
+            <td>Rp.<?php echo number_format($s->meal_allowance,0, ',','.') ?></td>
+            <td>Rp.<?php echo number_format($piece,0, ',','.') ?></td>
+            <td>Rp.<?php echo number_format($s->basic_salary + $s->transport_allowance + $s->meal_allowance - $piece,0, ',','.') ?></td>
         </tr>
-    <?php endforeach; ?>
-</table>
+
+        <?php endforeach ?>
+    </table>
+</div>
 
 <?php } else { ?>
-    <span class="badge badge-danger"><i class="fas fa-info-circle">The data is still empty, please input presence data for the month and year you choose!!</i></span>
+    <span class="badge badge-danger"><i class="fas fa-info-circle">The attendance data is still empty, please input presence data for the month and year you choose!!</i></span>
 <?php } ?>
+        
 </div>
              
