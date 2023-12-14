@@ -41,9 +41,30 @@
         </select>
         </div>
 
+        <?php 
+            if ((isset($_GET['month']) && $_GET['month']!='') && (isset($_GET['year']) && $_GET['year']!='')) {
+                $month = $_GET['month'];
+                $year = $_GET['year'];
+                $monthyear = $month.$year;
+            } else {
+                $month = date('m');
+                $year = date('Y');
+                $monthyear = $month.$year;
+            }
+        ?>
+
     <button type="submit" class="btn btn-primary mb-2 ml-auto"><i class="fas fa-eye"></i> Show Data</button>
-    <a href="" class="btn btn-success mb-2 ml-3"><i class="fas fa-print"></i> Print Payroll</a>
-    </form>
+    
+    <?php  if(count($salary) > 0) { ?>
+        <a href="<?php echo base_url('admin/dataSalary/printSalary?month='.$month),'&year='.$year ?>" class="btn btn-success mb-2 ml-3"><i class="fas fa-print"></i> Print Payroll</a>
+    <?php } else {?>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Launch demo modal
+        </button>
+    <?php  } ?> 
+
+       </form>
     </div>
 </div>
 
