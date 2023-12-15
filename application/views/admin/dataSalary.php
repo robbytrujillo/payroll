@@ -56,11 +56,11 @@
     <button type="submit" class="btn btn-primary mb-2 ml-auto"><i class="fas fa-eye"></i> Show Data</button>
     
     <?php  if(count($salary) > 0) { ?>
-        <a href="<?php echo base_url('admin/dataSalary/printSalary?month='.$month),'&year='.$year ?>" class="btn btn-success mb-2 ml-3"><i class="fas fa-print"></i> Print Payroll</a>
+        <a href="<?php echo base_url('admin/dataSalary/printSalary?month='.$month),'&year='.$year ?>" class="btn btn-success mb-2 ml-3"><i class="fas fa-print"></i> Print Salary</a>
     <?php } else {?>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Launch demo modal
+        <button type="button" class="btn btn-success mb-2 ml-3" data-toggle="modal" data-target="#exampleModal">
+        <i class="fas fa-print"></i></i>Print Salary
         </button>
     <?php  } ?> 
 
@@ -136,5 +136,25 @@ if ($sum_data > 0) {
     <span class="badge badge-danger"><i class="fas fa-info-circle">The attendance data is still empty, please input presence data for the month and year you choose!!</i></span>
 <?php } ?>
         
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      Salary data is still empty, please input attendance first in the month and year you choose!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
              
