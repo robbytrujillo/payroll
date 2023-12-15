@@ -71,7 +71,7 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- <h6 class="collapse-header">Login Screens:</h6> -->
-                        <a class="collapse-item" href="<?php echo base_url('admin/salaryReport')?>">Salary Report</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/filterSalaryReport')?>">Salary Report</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/attandanceReport') ?>">Attandance Report</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/salarySlip') ?>">Salary Slip</a>
                     </div>
