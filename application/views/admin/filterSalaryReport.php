@@ -5,6 +5,7 @@
                 Filter Employee Salary Report
             </div>
 
+            <form action="<?php echo base_url('admin/filterSalaryReport/printSalaryReport') ?>" method="post">
             <div class="card-body">
                 <div class="form-group row">
                     <label for="inputPassword" class="col-sm-3 col-form-label">Month</label>
@@ -42,6 +43,8 @@
                 </div>
                 
                 <button style="width: 100%;" type="submit" class="btn btn-primary"><i class="fas fa-print">Print Salary Report</i></button>
+            
+                </form>                  
             </div>
         </div>
         
