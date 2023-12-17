@@ -1,6 +1,6 @@
 <?php 
 
-class SalaryReport extends CI_Controller {
+class FilterSalaryReport extends CI_Controller{
     public function index() {
         $dataSalaryReport['title'] = "Employee Salary Report";
         $this->load->view('templates_admin/header', $dataSalaryReport);
