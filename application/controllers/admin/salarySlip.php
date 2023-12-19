@@ -13,6 +13,7 @@ class SalarySlip extends CI_Controller {
 
     public function printSalarySlip() {
         $dataSalarySlip['title'] = "Print Salary Slip";
+        $dataSalarySlip['salary_cut'] = $this->payrollModel->get_data('salary_cuts')->result();
         $name = $this->input->post('name_employee');
         $month = $this->input->post('month');
         $year = $this->input->post('year');
