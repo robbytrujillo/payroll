@@ -18,6 +18,7 @@
             <th class="text-center">Date Join</th>
             <th class="text-center">Status</th>
             <th class="text-center">Photo</th>
+            <th class="text-center">Action Rights</th>
             <th class="text-center">Action</th>
         </tr>
 
@@ -31,6 +32,7 @@
             <td><?php echo $e->date_join ?></td>
             <td><?php echo $e->status ?></td>
             <td><img src="<?php echo base_url().'assets/photo/'.$e->photo ?>" width="75px"></td>
+            <td><?php echo $e->access_rights ?></td>
             <td>
                 <center>
                     <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/dataEmployee/updateData/'.$e->id_employee) ?>"><i class="fas fa-edit"></i></a> 
