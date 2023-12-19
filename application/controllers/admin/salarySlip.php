@@ -7,7 +7,7 @@ class SalarySlip extends CI_Controller {
         $dataSalarySlip['employee'] = $this->payrollModel->get_data('employees')->result();
         $this->load->view('templates_admin/header', $dataSalarySlip);
         $this->load->view('templates_admin/sidebar');
-        $this->load->view('admin/salarySlip');
+        $this->load->view('admin/filterSalarySlip', $dataSalarySlip);
         $this->load->view('templates_admin/footer');
     }
 }
