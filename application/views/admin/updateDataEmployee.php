@@ -24,13 +24,13 @@
 
             <div class="form-group">
                 <label>Username</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $e->username ?>>
+                <input type="text" name="username" class="form-control" value="<?php echo $e->username ?>">
                 <?php echo form_error('username','<div class="text-small text-danger"></div>') ?>
             </div>
             
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" name="password" class="form-control" value="<?php echo $e->password ?>>
+                <input type="password" name="password" class="form-control" value="<?php echo $e->password ?>">
                 <?php echo form_error('password','<div class="text-small text-danger"></div>') ?>
             </div>
 
@@ -79,7 +79,7 @@
 
             <div class="form-group">
                 <label>Photo</label>
-                <input type="file" name="photo" class="form-control">
+                <input type="file" name="photo" class="form-control" value="<?php echo $e->photo ?>">
                 
             </div>
 
@@ -95,11 +95,11 @@
                     } ?>
                 </option>
                 <option value="1">Admin</option>
-                <option value="1">Employee</option>
+                <option value="2">Employee</option>
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">Update</button>
 
         </form>
 

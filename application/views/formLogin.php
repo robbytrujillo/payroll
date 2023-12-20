@@ -43,6 +43,7 @@
                                         <!-- <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1> -->
                                         <img src="<?php echo base_url('/assets/img/ihbslogonew.png') ?>" width="75%"><br><br>
                                     </div>
+                                    <?php echo $this->session->flashdata('message') ?>
                                     <form class="user" method="POST" action="<?php echo base_url('Welcome')?>">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"

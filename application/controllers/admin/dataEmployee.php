@@ -110,7 +110,7 @@ public function updateDataAction() {
             $config ['upload_path'] = './assets/photo';
             $config ['allowed_types'] = 'jpg|jpeg|png|tiff';
             $this->load->library ('upload',$config);
-            if (!$this->upload->do_upload('photo')){
+            if ($this->upload->do_upload('photo')){
                 $photo = $this->upload->data('file_name');
                 $this->db->set('photo', $photo);
             } else {

@@ -18,8 +18,8 @@ class Welcome extends CI_Controller {
 			$cek = $this->payrollModel->cek_login($username, $password);
 
 			if ($cek == FALSE) {
-				$this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Username & Password Failed!</strong>
+				$this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Username or password failed!</strong>
                 	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
