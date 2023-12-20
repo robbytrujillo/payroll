@@ -79,7 +79,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="<?php echo base_url('passwordEditing') ?>">
                 <i class="fas fa-fw fa-unlock-alt"></i>
                     <span>Password Editing</span></a>
             </li>
