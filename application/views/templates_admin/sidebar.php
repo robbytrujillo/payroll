@@ -86,7 +86,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="<?php echo base_url('welcome/logout') ?>">
                 <i class="fas fa-fw fa-sign-out-alt"></i>
                     <span>Logout</span></a>
             </li>
@@ -131,7 +131,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Welcome, <span style="color: #556B2F"><b><?php echo $this->session->userdata('name_employee') ?></b></span></span>
                                 <img class="img-profile rounded-circle"
-                                    src="<?php echo base_url('assets/photo/').$this->session->userdata('photo') ?>">
+                                    src="<?php echo base_url('/assets/photo/').$this->session->userdata('photo') ?>">
                             </a>
                         </li>
 
