@@ -18,6 +18,18 @@
                 <input type="text" name="name_employee" class="form-control">
                 <?php echo form_error('name_employee','<div class="text-small text-danger"></div>') ?>
             </div>
+            
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control">
+                <?php echo form_error('username','<div class="text-small text-danger"></div>') ?>
+            </div>
+            
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control">
+                <?php echo form_error('password','<div class="text-small text-danger"></div>') ?>
+            </div>
 
             <div class="form-group">
                 <label>Gender</label>
@@ -66,6 +78,15 @@
                 <label>Photo</label>
                 <input type="file" name="photo" class="form-control">
                 <?php echo form_error('photo','<div class="text-small text-danger"></div>') ?>
+            </div>
+           
+            <div class="form-group">
+                <label>Access Right</label>
+                <select name="access_right" class="form-control">
+                <option value="">--Choose Access Right--</option>
+                <option value="1">Admin</option>
+                <option value="1">Employee</option>
+                </select>
             </div>
 
             <button type="submit" class="btn btn-primary">Save</button>

@@ -35,6 +35,9 @@ class DataEmployee extends CI_Controller{
             $position = $this->input->post('position');
             $date_join = $this->input->post('date_join');
             $status = $this->input->post('status');
+            $access_right = $this->input->post('access_right');
+            $username = $this->input->post('username');
+            $password = md5($this->input->post('password'));
             $photo = $_FILES ['photo'].['name'] ;
 
             if ($photo=''){
@@ -56,6 +59,9 @@ class DataEmployee extends CI_Controller{
             'position'       => $position,
             'date_join'      => $date_join,
             'status'         => $status,
+            'access_right'   => $access_right,
+            'username'       => $username,
+            'password'       => $password,
             'photo'          => $photo,
             );
 
@@ -95,6 +101,9 @@ public function updateDataAction() {
         $position = $this->input->post('position');
         $date_join = $this->input->post('date_join');
         $status = $this->input->post('status');
+        $access_right = $this->input->post('access_right');
+        $username = $this->input->post('username');
+        $password = md5($this->input->post('password'));
         $photo = $_FILES ['photo'].['name'] ;
 
         if ($photo){
@@ -116,6 +125,9 @@ public function updateDataAction() {
         'position'       => $position,
         'date_join'      => $date_join,
         'status'         => $status,
+        'access_right'   => $access_right,
+        'username'       => $username,
+        'password'       => $password,
         );
 
         $where = array(
@@ -140,6 +152,9 @@ public function _rules() {
     $this->form_validation->set_rules('date_join', 'Date Join', 'required');
     $this->form_validation->set_rules('position', 'Position', 'required');
     $this->form_validation->set_rules('status', 'Status', 'required');
+    $this->form_validation->set_rules('access_right', 'Access Right', 'required');
+    $this->form_validation->set_rules('username', 'Username', 'required');
+    $this->form_validation->set_rules('password', 'Password', 'required');
 }
 
 public function deleteData($id) {

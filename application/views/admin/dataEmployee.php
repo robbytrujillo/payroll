@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" style="margin-bottom: 100px">
 
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800"><?php echo $title ?></h1>
@@ -13,6 +13,8 @@
             <th class="text-center">No</th>
             <th class="text-center">NIK</th>
             <th class="text-center">Name Employee</th>
+            <!-- <th class="text-center">Username</th>
+            <th class="text-center">Password</th> -->
             <th class="text-center">Gender</th>
             <th class="text-center">Position</th>
             <th class="text-center">Date Join</th>
@@ -27,12 +29,19 @@
             <td><?php echo $no++ ?></td>
             <td><?php echo $e->nik ?></td>
             <td><?php echo $e->name_employee ?></td>
+           
             <td><?php echo $e->gender ?></td>
             <td><?php echo $e->position ?></td>
             <td><?php echo $e->date_join ?></td>
             <td><?php echo $e->status ?></td>
             <td><img src="<?php echo base_url().'assets/photo/'.$e->photo ?>" width="75px"></td>
-            <td><?php echo $e->access_rights ?></td>
+            
+            <?php if ($e->access_right == '1' ) { ?>
+                <td>Admin</td>
+            <?php } else { ?>
+                <td>Employee</td>
+            <?php }  ?> 
+            
             <td>
                 <center>
                     <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/dataEmployee/updateData/'.$e->id_employee) ?>"><i class="fas fa-edit"></i></a> 
