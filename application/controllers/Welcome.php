@@ -26,6 +26,9 @@ class Welcome extends CI_Controller {
 				</div>');
 				redirect('Welcome');
 			} else {
+				$this->session->set_userdata('access_right', $cek->access_right);
+				$this->session->set_userdata('name_employee', $cek->name_employee);
+				$this->session->set_userdata('photo', $cek->photo);
 				switch ($cek->access_right) {
 					case 1 : redirect('admin/Dashboard');
 							 break;
