@@ -17,6 +17,10 @@ class Dashboard extends CI_Controller{
     }
     public function index(){
         $data['title'] = "Dashboard";
+        $id = $this->session->userdata('id_employee');
+        var_dump($id);
+        die();
+        $data['employee'] = $this->db->query("SELECT * FROM employees WHERE id_employee = $id ")->result();
         $this->load->view('templates_employee/header', $data);
         $this->load->view('templates_employee/sidebar');
         $this->load->view('employee/dashboard', $data);
