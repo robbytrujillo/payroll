@@ -17,10 +17,27 @@ class passwordEditing extends CI_Controller {
         $this->form_validation->set_rules('newPassword', 'New Password', 'required|matches[confirmPassword]');
         $this->form_validation->set_rules('confirmPassword', 'Confirm Password', 'required');
 
-        if ($this->form_validation->run() == FALSE) {
-            
-        }
+        if ($this->form_validation->run() != FALSE) {
+            $dataPasswordEditing = array('password' => md5($newPassword));
 
+            $id = array('id_employee' => $this->session->userdata('id_employee'));
+
+            $this->payrollModel->update_data('employees', $dataPasswordEditing, $id);
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Update Password Success!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+            </button>
+            </div>');
+            redirect('Welcome');
+        }
+        else {
+            $dataPasswordEditing['title'] = "Password Editing";
+            $this->load->view('templates_admin/header', $dataPasswordEditing);
+            $this->load->view('templates_admin/sidebar');
+            $this->load->view('passwordEditing', $dataPasswordEditing);
+            $this->load->view('templates_admin/footer');
+        }
     }
 }
 

@@ -6,7 +6,7 @@ d<div class="container-fluid">
 
     <div class="card" style="width: 50%">
         <div class="card-body">
-            <form method="POST" action="<?php echo base_url('passwordEditing/passwordEditingAction') ?>">
+            <form method="POST" action="<?php echo base_url('/passwordEditing/passwordEditingAction') ?>">
 
             <div class="form-group">
                 <label>New Password</label>
