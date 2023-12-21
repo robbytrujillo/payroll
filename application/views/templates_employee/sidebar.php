@@ -29,7 +29,7 @@
             
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('employee/dataSalary') ?>">
-                <i class="fa-solid fa-money-check-dollar"></i>
+                <i class="fas fa-fw fa-money-check-alt"></i>
                     <span>Data Salary</span></a>
             </li>
 
