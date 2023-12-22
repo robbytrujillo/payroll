@@ -19,8 +19,6 @@ class Dashboard extends CI_Controller{
         $data['title'] = "Dashboard";
         $id = $this->session->userdata('id_employee');
         $data['employee'] = $this->db->query("SELECT * FROM employees WHERE id_employee = $id ")->result();
-        var_dump($data);
-        die();
         $this->load->view('templates_employee/header', $data);
         $this->load->view('templates_employee/sidebar');
         $this->load->view('employee/dashboard', $data);
