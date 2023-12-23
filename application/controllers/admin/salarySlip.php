@@ -39,8 +39,6 @@ class SalarySlip extends CI_Controller {
                 attendaces.alpha FROM employees INNER JOIN attendaces ON attendaces.nik = employees.nik
                 INNER JOIN position ON position.name_position = employees.position WHERE attendaces.month = '$monthyear' 
                 AND attendaces.name_employee = '$name'")->result();
-                // var_dump($slip);
-                // die();
         $this->load->view('templates_admin/header', $dataSalarySlip);
         $this->load->view('admin/printSalarySlip', $dataSalarySlip);
     }
