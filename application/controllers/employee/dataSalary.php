@@ -17,8 +17,15 @@ class DataSalary extends CI_Controller{
     }
     public function index(){
         $data['title'] = "Data Salary";
-        $id = $this->session->userdata('id_employee');
-        $data['employee'] = $this->db->query("SELECT * FROM employees WHERE id_employee = $id ")->result();
+        $nik = $this->session->userdata('nik');
+        $data['salary_cut1'] = $this->payrollModel->get_data('salary_cuts')->result();
+        $data['salary'] = $this->db->query("SELECT employees.name_employee, employees.nik, 
+            position.basic_salary, position.transport_allowance, position.meal_allowance, 
+            attendaces.alpha, attendaces.month, attendaces.id_attendance FROM employees 
+            INNER JOIN attendaces ON attendaces.nik = employees.nik 
+            INNER JOIN position ON position.name_position = employees.position
+            WHERE attendaces.nik = '$nik'
+            ORDER BY attendaces.month DESC")->result();
         $this->load->view('templates_employee/header', $data);
         $this->load->view('templates_employee/sidebar');
         $this->load->view('employee/dataSalary', $data);
