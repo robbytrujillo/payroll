@@ -36,7 +36,7 @@
             
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('passwordEditing') ?>">
+                <a class="nav-link" href="<?php echo base_url('employee/passwordEditing') ?>">
                 <i class="fas fa-fw fa-unlock-alt"></i>
                     <span>Password Editing</span></a>
             </li>
