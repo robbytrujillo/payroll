@@ -20,7 +20,6 @@
 
     </center>
 
-
     <?php foreach($salary_cut as $s) {
         $salary_cut = $s->number_of_pieces;
     } ?>

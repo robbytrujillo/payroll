@@ -32,16 +32,17 @@ class DataSalary extends CI_Controller{
         $this->load->view('templates_employee/footer');
     }
 
-    public function printSlip() {
+    public function printSlip($id) {
         $data['title'] = "Print Salary Slip";
         $data['salary_cut'] = $this->payrollModel->get_data('salary_cuts')->result();
         
         $data['print_slip'] = $this->db->query("SELECT employees.nik, employees.name_employee, 
                 position.name_position, position.basic_salary, position.transport_allowance, position.meal_allowance,
-                attendaces.alpha FROM employees INNER JOIN attendaces ON attendaces.nik = employees.nik
-                INNER JOIN position ON position.name_position = employees.position WHERE attendaces.month = '$monthyear' 
-                AND attendaces.name_employee = '$name'")->result();
-                // var_dump($slip);
+                attendaces.alpha, attendaces.month FROM employees INNER JOIN attendaces ON attendaces.nik = employees.nik
+                INNER JOIN position ON position.name_position = employees.position WHERE attendaces.id_attendance = '$id' 
+                ")->result();
+                // var_dump($data);
+                // die();
         $this->load->view('templates_employee/header', $data);
         $this->load->view('employee/printSalarySlip', $data);
     }
